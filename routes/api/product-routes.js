@@ -120,7 +120,7 @@ router.delete('/:id', async(req, res) => {
     });
 
     if (!productData) {
-      res.status(404).json({ message: 'No product found with that id!' });
+      res.status(404).json({ message: 'No product found' });
       return;
     }
 
@@ -131,7 +131,7 @@ router.delete('/:id', async(req, res) => {
         },
       })
       if(!productTags){
-        console.log(`The product had no tags attached to the product`)
+        console.log(`No Tags`)
       }
     }catch (err) {
       res.status(500).json(err);
